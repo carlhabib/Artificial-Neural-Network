@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="perceptron.PerceptronSetupController">
+   <children>
+      <Label layoutX="31.0" layoutY="117.0" text="Number of Inputs" />
+      <TextField fx:id="num_Of_Inputs_TextField" layoutX="184.0" layoutY="112.0" onAction="#update_Inputs" onKeyPressed="#check_Int" promptText="Enter a Positive Integer" />
+      <Label layoutX="31.0" layoutY="152.0" text="Number of Outputs" />
+      <TextField fx:id="num_Of_Outputs_TextField" layoutX="184.0" layoutY="147.0" onAction="#update_Outputs" onKeyPressed="#check_Int" promptText="Enter a Positive Integer" />
+      <Label layoutX="31.0" layoutY="265.0" text="Error Threshold" />
+      <TextField fx:id="Error_Threshold_TextField" layoutX="184.0" layoutY="260.0" />
+      <Label layoutX="31.0" layoutY="300.0" text="Error Function" />
+      <RadioButton fx:id="mse_RB" layoutX="184.0" layoutY="300.0" mnemonicParsing="false" onAction="#setErrorFunction" selected="true" text="MSE">
+         <toggleGroup>
+            <ToggleGroup fx:id="error_Function_TG" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="mae_RB" layoutX="184.0" layoutY="323.0" mnemonicParsing="false" onAction="#setErrorFunction" text="MAE" toggleGroup="$error_Function_TG" />
+      <RadioButton fx:id="mde_RB" layoutX="184.0" layoutY="347.0" mnemonicParsing="false" onAction="#setErrorFunction" text="MDE" toggleGroup="$error_Function_TG" />
+      <Button fx:id="create_Perceptron_Btn" layoutX="32.0" layoutY="530.0" mnemonicParsing="false" onAction="#create_Perceptron" prefHeight="27.0" prefWidth="320.0" text="Create Perceptron" />
+      <Button layoutX="32.0" layoutY="427.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setActivationWeightsPressed" prefHeight="27.0" prefWidth="320.0" text="Set Activation Weights" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <Button layoutX="32.0" layoutY="496.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#randomActivationWeightsPressed" prefHeight="27.0" prefWidth="320.0" text="Random Activation Weights">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <Label layoutX="305.0" layoutY="29.0" text="Perceptron Setup">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="402.0" layoutY="76.0" orientation="VERTICAL" prefHeight="486.0" prefWidth="0.0" />
+      <RadioButton fx:id="multi_Layer_RB" layoutX="192.0" layoutY="76.0" mnemonicParsing="false" onAction="#setLayerStatus" text="Multi Layered">
+         <toggleGroup>
+            <ToggleGroup fx:id="layered_TG" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="one_Layer_RB" layoutX="50.0" layoutY="76.0" mnemonicParsing="false" onAction="#setLayerStatus" selected="true" text="One Layered" toggleGroup="$layered_TG" />
+      <ScrollPane layoutX="420.0" layoutY="72.0" prefHeight="403.0" prefWidth="376.0">
+         <content>
+            <HBox fx:id="perceptron_HBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="402.0" prefWidth="374.0" />
+         </content>
+      </ScrollPane>
+      <Button layoutX="32.0" layoutY="222.0" mnemonicParsing="false" onAction="#create_Cell" prefHeight="27.0" prefWidth="118.0" text="Add Cell" />
+      <Button fx:id="add_Layer_Btn" layoutX="31.0" layoutY="186.0" mnemonicParsing="false" onAction="#create_Layer" prefHeight="27.0" prefWidth="118.0" text="Add Layer" />
+      <Button fx:id="prev_Layer_Btn" layoutX="420.0" layoutY="496.0" mnemonicParsing="false" onAction="#goPreviousLayer" prefHeight="27.0" prefWidth="167.0" text="Previous Layer" />
+      <Button fx:id="next_Layer_Btn" layoutX="629.0" layoutY="496.0" mnemonicParsing="false" onAction="#goNextLayer" prefHeight="27.0" prefWidth="167.0" text="Next Layer" />
+      <Button fx:id="rmv_Layer_Btn" disable="true" layoutX="184.0" layoutY="186.0" mnemonicParsing="false" onAction="#remove_Layer" prefHeight="27.0" prefWidth="167.0" text="Remove Layer" />
+      <Button fx:id="clear_Perceptron_Btn" layoutX="184.0" layoutY="222.0" mnemonicParsing="false" onAction="#clear_Perceptron" prefHeight="27.0" prefWidth="167.0" text="Clear Perceptron" />
+      <Button fx:id="prev_Cell_Btn" layoutX="420.0" layoutY="530.0" mnemonicParsing="false" onAction="#goPreviousCell" prefHeight="27.0" prefWidth="167.0" text="Previous Cell" />
+      <Button fx:id="next_Cell_Btn" layoutX="629.0" layoutY="530.0" mnemonicParsing="false" onAction="#goNextCell" prefHeight="27.0" prefWidth="167.0" text="Next Cell" />
+      <Button layoutX="32.0" layoutY="393.0" mnemonicParsing="false" onAction="#set_Function_Parameters" prefHeight="27.0" prefWidth="320.0" text="Set Function Parameters" />
+      <Separator layoutX="18.0" layoutY="370.0" prefHeight="3.0" prefWidth="367.0" />
+      <Button layoutX="719.0" layoutY="29.0" mnemonicParsing="false" onAction="#go_Back" text="Back" />
+      <Button layoutX="32.0" layoutY="462.0" mnemonicParsing="false" onAction="#showActivationWeightsPressed" prefHeight="27.0" prefWidth="320.0" text="Show Activation Weights" />
+   </children>
+</AnchorPane>

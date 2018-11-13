@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+<Perceptron index="0">
+    <errorfunction>MSE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.9153882986172713</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.7329008497256315</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>4.442069854857904 0.17419389657034046</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>4.442069854857904 0.17419389657034046</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="2">
+    <errorfunction>MAE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.6976230618599222</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.5339597981887904</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>5.226206778052673 0.050232292808604084</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>5.226206778052673 0.050232292808604084</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="4">
+    <errorfunction>MSE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.627085646250263</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.06654070816825497</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-43677.205654161044 2826.2325251007333</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-43677.205654161044 2826.2325251007333</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="6">
+    <errorfunction>MSE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.5707534513246204</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.4758572540409869</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-42006.69254947714 3404.269789156394</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-42006.69254947714 3404.269789156394</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="8">
+    <errorfunction>MSE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.506566986862573</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-1.328586481365794</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="10">
+    <errorfunction>MSE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.506566986862573</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-1.328586481365794</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="12">
+    <errorfunction>MAE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.46645189695622113</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.9822248508594859</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-4.091384565043478 1.920465584374207</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.9959406259053605 -5.758527357280571</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="14">
+    <errorfunction>MAE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.46645189695622113</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.9822248508594859</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-4.091384565043478 1.920465584374207</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.9959406259053605 -5.758527357280571</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="16">
+    <errorfunction>MSE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.41657187372296567</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.9492042720261941</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-2.710933589633021 1.1568080789439676</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.3065012184142093 -8.92384397442035</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+<Perceptron index="18">
+    <errorfunction>MSE</errorfunction>
+    <errorthreshold>0.0</errorthreshold>
+    <Layer index="0">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.5268818860280488</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.8773751629026196</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+    <Layer index="1">
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>-9.646802392949958 -0.22754471558085942</weight>
+        <index>0</index>
+        <threshold>0.0</threshold>
+      </Cell>
+      <Cell>
+        <parameters>1.0</parameters>
+        <function>Unity</function>
+        <weight>0.45449984170194746 -12.76621141870228</weight>
+        <index>1</index>
+        <threshold>0.0</threshold>
+      </Cell>
+    </Layer>
+  </Perceptron>
+</root>

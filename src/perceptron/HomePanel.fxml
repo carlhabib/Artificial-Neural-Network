@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="perceptron.HomePanelController">
+   <children>
+      <Button fx:id="learningModeBtn" layoutX="235.0" layoutY="135.0" mnemonicParsing="false" onAction="#openLearningMode" text="Create Perceptron" />
+      <Button fx:id="validationModeBtn" layoutX="369.0" layoutY="260.0" mnemonicParsing="false" onAction="#openValidationMode" text="Test" />
+      <Label layoutX="237.0" layoutY="48.0" text="Perceptron">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="exitBtn" layoutX="280.0" layoutY="307.0" mnemonicParsing="false" onAction="#exitProgram" text="Exit" />
+      <Button fx:id="trainWithValuesButton" layoutX="187.0" layoutY="260.0" mnemonicParsing="false" onAction="#goToIOPanel" text="Train" />
+      <Button fx:id="loadPerceptronButton" layoutX="276.0" layoutY="233.0" mnemonicParsing="false" onAction="#loadPerceptron" text="Load" />
+      <ComboBox fx:id="perceptronsList" layoutX="225.0" layoutY="187.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
