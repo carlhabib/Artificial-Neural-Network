@@ -67,8 +67,8 @@ public class TrainingPanelController {
 
     public void initialize() {
 
-        kfoldsRB.setUserData(0);
-        svRB.setUserData(1);
+        kfoldsRB.setUserData(1);
+        svRB.setUserData(0);
     	
         for(int i=0; i<inputNum; i++) {
             inputs_VBox.getChildren().add(new TextField());
@@ -116,39 +116,49 @@ public class TrainingPanelController {
         ArrayList<double[]> outputsArrayList = new ArrayList<>();
         int n = Integer.parseInt(validationTF.getText());
 
-        double err = 0;
-        double count = 0;
+        double err = 0.0;
+        double count = 0.0;
         double numberOfTests = 0;
 
         if (s.equalsIgnoreCase("Even Odd Classifier")) {
             if ((int) trainingTG.getSelectedToggle().getUserData() == 0) {
-                ArrayList<double[]> inputsType1 = new ArrayList<>();
-                ArrayList<double[]> inputsType2 = new ArrayList<>();
+                ArrayList<double[]> inputsArr = new ArrayList<>();
+                ArrayList<double[]> outputsArr = new ArrayList<>();
                 double[] outputType1 = {0};
                 double[] outputType2 = {1};
 
-                for (int i = 0; i < n; i++) {// this loop creates the number of points to train desired by the user, the points are equally divided between the four quadrants
+                for (int i = 0; i < 100; i++) {// this loop creates the number of points to train desired by the user, the points are equally divided between the four quadrants
                     double[] input = new double[1];
 
                     Random rand = new Random();// the points are created between the boundaries -10 and 10 randomly
                     if (i % 2 == 0) {
                         input[0] = 2 * rand.nextInt(5);
-                        inputsType1.add(input);
+                        inputsArr.add(input);
+                        outputsArr.add(outputType1);
                     } else {
                         input[0] = 2 * rand.nextInt(5) + 1;
-                        inputsType2.add(input);
+                        inputsArr.add(input);
+                        outputsArr.add(outputType2);
                     }
                 }
 
-                for (int i = 0; i < (n * 0.7); i++) { // the training will be done on 70% of the created points
+                for (int i = 0; i < n; i++) { // the training will be done on 70% of the created points
 
                     if (i % 2 == 0) { // the perceptron is trained for one point from each quadrant successively
-                        perceptron.trainPerceptron(inputsType1.get(i / 4), outputType1);
+                        perceptron.trainPerceptron(inputsArr.get(i / 4), outputsArr.get(i));
                     }
                     if (i % 2 == 1) {
-                        perceptron.trainPerceptron(inputsType2.get((i / 4) + 1), outputType2);
+                        perceptron.trainPerceptron(inputsArr.get((i / 4) + 1), outputsArr.get(i));
                     }
 
+                }
+
+                for(int i = 0; i<100-n; i++){
+                    double[] temp = perceptron.test(inputsArr.get(n+1)).getData();
+                    numberOfTests++;
+                    double error = ErrorMachine.computeError("MAE", temp, outputsArr.get(n+i));
+                    if (ErrorMachine.errorAcceptance(error, 0))
+                        count++;
                 }
             } else {
                 ArrayList<double[]> inputs = new ArrayList<>();
@@ -248,7 +258,7 @@ public class TrainingPanelController {
             }
             if ((int) trainingTG.getSelectedToggle().getUserData() == 0) {
 
-                for (int i = 0; i < (n * k / 100); i++) { // the training will be done on 70% of the created points
+                for (int i = 0; i < k; i++) { // the training will be done on 70% of the created points
 
                     if (i % 4 == 0) { // the perceptron is trained for one point from each quadrant successively
                         perceptron.trainPerceptron(inputsType1.get(i / 4), outputType1);
@@ -265,7 +275,10 @@ public class TrainingPanelController {
 
                 }
 
-                for (int i = 0; i <= (n * (100 - k) / 100); i++) {//this is the testing phase which is done on 30% of the points created
+                int c = 0;
+                for (int i = k; i < 100 && ((i/4+3) < inputsType3.size()) ; i++) {//this is the testing phase which is done on 30% of the points created
+
+                    c++;
                     Matrix temp;
                     if (i % 4 == 0) {
                         temp = perceptron.test(inputsType1.get(i / 4));
@@ -292,10 +305,11 @@ public class TrainingPanelController {
                             count++;
 
                     }
-                }
-                err = count / (n * k);// the accuracy will give an indication of how many points were successively tested and their output matched with the desired output
 
-                error_TF.setText("" + err);
+                }
+                err = count / (double)c;// the accuracy will give an indication of how many points were successively tested and their output matched with the desired output
+
+                error_TF.setText(err+"");
             } else {
                 ArrayList<double[]> inputs = new ArrayList<>();
                 ArrayList<double[]> outputs = new ArrayList<>();
@@ -353,8 +367,10 @@ public class TrainingPanelController {
                             count++;
                     }
 
-
                 }
+
+                err = count / numberOfTests;
+                error_TF.setText("" + err);
 
             }
 
@@ -364,8 +380,6 @@ public class TrainingPanelController {
             stage.setScene(new Scene(root1));
             stage.show();
 
-            err = count / numberOfTests;
-            error_TF.setText("" + err);
 
         }
     }
@@ -382,6 +396,7 @@ public class TrainingPanelController {
         double error = 0;
         int k = Integer.parseInt(validationTF.getText());
         int count=0;
+        int counter = 0;
         if((int)trainingTG.getSelectedToggle().getUserData()==0) {
             for(int i=0; i<allPairsList.getLength()*k/100; i++){
                 count++;
@@ -448,9 +463,9 @@ public class TrainingPanelController {
                 numberOfTests++;
                 double err = ErrorMachine.computeError("MAE", tempor, outputsArr);
                 if (ErrorMachine.errorAcceptance(err, 0))
-                    count++;
+                    counter++;
             }
-            error = count/numberOfTests;
+            error = counter/numberOfTests;
             error_TF.setText(""+error);
         }else {
             double numberOfPoints = allPairsList.getLength();
@@ -520,7 +535,7 @@ public class TrainingPanelController {
                     for (int j = 0; j < outputs.size(); j++) {
                         outputsArr[j] = outputs.get(j);
                     }
-                    for (int j = currentMin; i < currentMin + k; i++) {// the points outside the fold will be used to test
+                    for (int j = currentMin; j < currentMin + k; j++) {// the points outside the fold will be used to test
                         double[] temp = perceptron.test(inputsArr).getData();
                         numberOfTests++;
                         double err = ErrorMachine.computeError("MAE", temp, outputsArr);

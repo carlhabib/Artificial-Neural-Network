@@ -108,7 +108,7 @@ public class Perceptron {
             str+=("Number of cells per layer "+ i +": "+ layerArrayList.get(i-1).getCells_ArrayList().size()+"\n");
             str+=("Weigths at this layer: \n");
             for(int j=0; j<layerArrayList.get(i-1).getCells_ArrayList().size(); j++){
-                str+= layerArrayList.get(i-1).getCells_ArrayList().get(j).getWeights().showStr();
+                //str+= layerArrayList.get(i-1).getCells_ArrayList().get(j).getWeights().showStr();
             }
 
         }
