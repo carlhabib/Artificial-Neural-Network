@@ -98,5 +98,24 @@ public class Perceptron {
         }
         return intermediateOutput;
     }
+
+    public String sendString(){
+        String str = "";
+        str+=("Number of layers:\n");
+        str+=(layerArrayList.size())+"\n";
+        for(int i=1;i<=layerArrayList.size();i++){
+            str+=("Layer: " + i+"\n");
+            str+=("Number of cells per layer "+ i +": "+ layerArrayList.get(i-1).getCells_ArrayList().size()+"\n");
+            str+=("Weigths at this layer: \n");
+            for(int j=0; j<layerArrayList.get(i-1).getCells_ArrayList().size(); j++){
+                str+= layerArrayList.get(i-1).getCells_ArrayList().get(j).getWeights().showStr();
+            }
+
+        }
+        str+= "The error Function is "+errorFunction +"\n";
+        str+= "The error Threshold is "+errorThreshold +"\n";
+        str+= "The number of Inputs is "+ layerArrayList.get(0).getCells_ArrayList().size() +"\n";
+        return str;
+    }
 }
 

@@ -2,7 +2,6 @@ package perceptron;
 
 class ErrorMachine {
 	static double computeError(String name, double[] Y, double[] C){
-		System.out.print(name);
 		switch (name) {
 			case "MAE":
 				return computeErrorMAE(Y, C);

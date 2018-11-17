@@ -138,7 +138,7 @@ public class PerceptronSetupController {
 
         Parent root = FXMLLoader.load(getClass().getResource("TrainingPanel.fxml"));
         stage.setTitle("Perceptron");
-        stage.setScene(new Scene(root, 600, 550));
+        stage.setScene(new Scene(root, 800, 550));
         stage.show();
     }
 

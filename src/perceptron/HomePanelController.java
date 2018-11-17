@@ -57,7 +57,6 @@ public class HomePanelController {
     @FXML
     void loadPerceptron(ActionEvent event) {
         int index = perceptronsList.getSelectionModel().getSelectedIndex();
-        System.out.print(index);
         rdx = new ReadXMLFile();
         perceptron = rdx.getPerceptron(index);
         layersArrayList = perceptron.layerArrayList;
@@ -92,7 +91,7 @@ public class HomePanelController {
     void goToIOPanel(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("TrainingPanel.fxml"));
         stage.setTitle("Perceptron");
-        stage.setScene(new Scene(root, 600, 550));
+        stage.setScene(new Scene(root, 800, 550));
         stage.show();
     }
 }

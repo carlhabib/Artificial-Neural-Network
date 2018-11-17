@@ -26,6 +26,7 @@ public class Main extends Application {
 
     static String errorFunction;
     static double errorThreshold;
+    static double accuracy = -1;
 
 
     @Override

@@ -47,7 +47,7 @@ public class TestingPanelController {
     public void goTraining(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("TrainingPanel.fxml"));
         stage.setTitle("Perceptron");
-        stage.setScene(new Scene(root, 600, 450));
+        stage.setScene(new Scene(root, 800, 550));
         stage.show();
     }
 

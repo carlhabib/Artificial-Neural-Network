@@ -8,4 +8,36 @@
             0 0
         </Outputs>
     </Pair>
+    <Pair>
+        <Inputs>
+            1 1
+        </Inputs>
+        <Outputs>
+            0 0
+        </Outputs>
+    </Pair>
+    <Pair>
+        <Inputs>
+            1 1
+        </Inputs>
+        <Outputs>
+            0 0
+        </Outputs>
+    </Pair>
+    <Pair>
+        <Inputs>
+            1 1
+        </Inputs>
+        <Outputs>
+            0 0
+        </Outputs>
+    </Pair>
+    <Pair>
+        <Inputs>
+            1 1
+        </Inputs>
+        <Outputs>
+            0 0
+        </Outputs>
+    </Pair>
 </root>
